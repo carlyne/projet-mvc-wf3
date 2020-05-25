@@ -14,8 +14,10 @@ $router->get('/vehicule', 'VehiculeController@listAll');
 
 // Navigation Modification
 $router->get('/conducteur/new', 'ConducteurController@new');
+$router->get('/vehicule/new', 'VehiculeController@new');
 
 // Modifications
 $router->post('conducteur/create', 'ConducteurController@create');
+$router->post('vehicule/create', 'VehiculeController@create');
 
 $router->run();

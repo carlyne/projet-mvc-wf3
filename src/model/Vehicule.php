@@ -14,6 +14,15 @@ class Vehicule {
     /** var string */
     private $_immatriculation;
 
+    public function __construct(int $id, string $marque, string $modele, string $couleur, string $immatriculation) 
+    {
+        $this->_idVehicule = $id;
+        $this->_marque = $marque;
+        $this->_modele = $modele;
+        $this->_couleur = $couleur;
+        $this->_immatriculation = $immatriculation;
+    }
+
     public function getId() : int {
         return $this->_idVehicule;
     }

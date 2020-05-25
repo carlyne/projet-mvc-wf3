@@ -18,7 +18,8 @@ class ConducteurController extends AbstractController
 
     
     static public function create() : void 
-    {
+    {   
+        // futur : gérer ça en array
         $prenom = $_POST['prenom'];
         $nom = $_POST['nom'];
 

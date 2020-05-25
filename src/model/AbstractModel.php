@@ -32,6 +32,16 @@ abstract class AbstractModel {
                 ]);
     }
 
+    public function where(string $condition, string $value) : self
+    {
+        $this->_condition = [
+            'condition' => $condition,
+            'value' => $value
+        ];
+
+        return $this;
+    }
+
     public function insertValues(array $columns, array $values) : self
     {
         $this->_inserts = [
@@ -40,6 +50,17 @@ abstract class AbstractModel {
         ];
 
         return $this;
+    }
+
+    public function createGetQuery() : string
+    {
+        $query = 'SELECT ' . implode(', ', $this->_tableFields) . ' FROM ' . $this->_tableName . ' ';
+
+        if(!empty($this->_condition)) {
+            $query .= 'WHERE ' . $this->_condition['condition'] . ' = ' . $this->_condition['value'];
+        };
+        
+        return $query;
     }
 
     public function createPostQuery() : string

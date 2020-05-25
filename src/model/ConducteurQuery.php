@@ -1,7 +1,6 @@
 <?php 
 
 namespace App\Model;
-use PDO;
 
 class ConducteurQuery extends AbstractModel
 {
@@ -11,6 +10,7 @@ class ConducteurQuery extends AbstractModel
         parent::__construct($tableName, $tableFields);
     }
 
+    // futur : un array en parameters plutot que des string
     public function createOne(string $prenom, string $nom) : bool
     {
         $bdd = $this->getPdo();
@@ -18,6 +18,7 @@ class ConducteurQuery extends AbstractModel
 
         $statement = $bdd->prepare($query);
 
+        // futur : boucler sur l'array et le tableau associatif
         return $statement->execute([
             ':prenom' => $prenom,
             ':nom' => $nom

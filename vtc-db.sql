@@ -26,3 +26,9 @@
 --     FOREIGN KEY (id_conducteur) REFERENCES conducteur (id_conducteur)
 --     ON DELETE CASCADE
 -- );
+
+-- SET FOREIGN_KEY_CHECKS=0;
+
+SELECT * from association_vehicule_conducteur;
+
+ 

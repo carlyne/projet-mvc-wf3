@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Ajouter un véhicule</h1>
+
+<form action="{{ base_path ~ '/vehicule/create' }}" method="POST">
+    <label for="marque">Marque :</label>
+    <input type="text" name="marque" id="marque">
+
+    <label for="modele"> Modele :</label>
+    <input type="text" name="modele" id="modele">
+
+    <label for="couleur"> Couleur :</label>
+    <input type="text" name="couleur" id="couleur">
+
+    <label for="immatriculation"> Immatriculation :</label>
+    <input type="text" name="immatriculation" id="immatriculation">
+
+    <button type="submit">Ajouter</button>
+</form>
+
+<a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
+
+{% endblock %}
