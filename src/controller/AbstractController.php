@@ -7,7 +7,7 @@ use Twig\Loader\FilesystemLoader;
 
 abstract class AbstractController {
 
-    public static function getTwig() {
+    public static function getTwig() : Environment {
         $loader = new FilesystemLoader(__DIR__ . '/../../views');
         $twig = new Environment($loader);
         $twig->addGlobal('assets',  BASE_PATH . '/assets' );

@@ -6,7 +6,23 @@ use PDO;
 
 abstract class AbstractModel {
 
-    public static function getPdo() {
+    /** var string */
+    protected $_tableName;
+    /** var array */
+    protected $_tableFields = ['*'];
+    /** var array */
+    protected $_condition = [];
+    /** var array */
+    protected $_inserts = [];
+    /** var PDO */
+
+    public function __construct(string $tableName, array $tableFields = ['*'])
+    {
+        $this->_tableName = $tableName;
+        $this->_tableFields = $tableFields;
+    }
+
+    public function getPdo() : PDO {
         return new PDO(
                 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';port='.DB_PORT.';charset=utf8',
                 DB_USERNAME,
@@ -14,5 +30,42 @@ abstract class AbstractModel {
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
                 ]);
+    }
+
+    public function insertValues(array $columns, array $values) : self
+    {
+        $this->_inserts = [
+            'columns' => $columns,
+            'values' => $values
+        ];
+
+        return $this;
+    }
+
+    public function createPostQuery() : string
+    {   
+        $query = 'INSERT INTO ' . $this->_tableName . ' ';
+
+        $insertColumns = implode(', ', $this->_inserts['columns']);
+        $insertValues = implode(', ', $this->_inserts['values']);
+
+        $query .= '(' . $insertColumns . ') VALUES (' . $insertValues . ') ';
+
+        return $query;
+    }
+
+    public function getTableName() : string
+    {
+        return $this->_tableName;
+    }
+
+    public function getTableFields() : array
+    {
+        return $this->_tableFields;
+    }
+    
+    public function getCondition() : array
+    {
+        return $this->_condition;
     }
 }

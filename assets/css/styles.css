@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+/**
+  *
+  * Containers 
+  */
+/* full screen width container */
+.container {
+    width: 100%;
+    margin: 0 auto 20px;
+}
+
+.container.custom {
+    width: 80%;
+}
+
+.container.custom .navbar {
+    width: 100%;
+}
+
+.container.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin: 0;
+    z-index: 200;
+}
+
+.container.sticky.custom {
+    left: 10%;
+}
+
+.container.sticky.custom .navbar {
+    width: 100%;
+}
+
+.container.sticky+.container {
+    margin-top: 60px;
+}
+
+@media (min-width: 48rem) {
+    .container.sticky+.container {
+        margin-top: 120px;
+    }
+}
+
+.container.sticky.bottom {
+    bottom: 0;
+}
+
+@media (min-width: 48rem) {
+    .container.sticky.left {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .container.sticky.left+.container {
+        width: 75%;
+        margin-left: 25%;
+    }
+}
+
+.container.content-custom .navbar {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container .container.custom {
+    margin-bottom: 0;
+}
+
+/* for including nav menu, logo menu, pagination...*/
+.navbar {
+    width: 100%;
+    height: 75px;
+    padding: 20px;
+    margin: 0;
+    display: none;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media (min-width: 48rem) {
+    .navbar {
+        display: flex;
+    }
+}
+
+@media (min-width: 48rem) {
+    .navbar.col {
+        flex-direction: column;
+        height: 100%;
+    }
+}
+
+/* to handle menus items*/
+.navbar-menu {
+    margin: 0;
+    padding: 0;
+    /*display: none;*/
+    list-style-type: none;
+}
+
+@media (min-width: 48rem) {
+    .navbar-menu {
+        display: block;
+    }
+}
+
+.navbar-menu li {
+    padding: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.navbar-menu.list-col li {
+    display: block;
+}
+
+/**
+  *
+  * Modifier  
+  */
+.r-pad {
+    padding: 20px;
+}
+
+/**
+  *
+  * Grid
+  */
+/* structure position*/
+.d-grid {
+    display: flex;
+}
+
+.d-row {
+    flex-direction: row;
+}
+
+.d-col {
+    flex-direction: column;
+}
+
+/* element position */
+.d-between {
+    justify-content: space-between;
+}
+
+.d-center {
+    justify-content: center;
+}
+
+.d-end {
+    justify-content: flex-end;
+}
+
+/**
+* Surcouche
+*
+*/
+
+header#navigation {
+    background-color: midnightblue;
+    color: green;
+}
+
+header#navigation li a {
+    background-color: midnightblue;
+    color: #efefef;
+}

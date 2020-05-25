@@ -1,11 +1,28 @@
-<!doctype html>
-<html lang="fr">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ assets ~ '/css/styles.css' }}">
+    <title>Projet mvc wf3</title>
 </head>
 
 <body>
+    
+<header id="navigation" class="container content-custom sticky">
+    <nav class="navbar d-end">
+        <ul class="navbar-menu">
+            <li><a href="{{ base_path ~ '/' }}">Accueil</a></li>
+            <li><a href="{{ base_path ~ '/vehicule' }}">Vehicules</a></li>
+            <li><a href="{{ base_path ~ '/conducteur' }}">Conducteurs</a></li>
+            <li><a href="{{ base_path ~ '/association' }}">Tout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="container custom">
     {% block content %}{% endblock %}
+</main>
+    
 </body>
 </html>
