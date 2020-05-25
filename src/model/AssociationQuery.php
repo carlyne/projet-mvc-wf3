@@ -31,21 +31,20 @@ class AssociationQuery extends AbstractModel {
             return [];
         };
 
-        $conducteur = null;
-        $vehicule = null;
         $associationObject = [];
 
         foreach($data as $associationData) {
-            $conducteur = $this->_conducteurQuery->findOne($associationData['id_conducteur']);
-            $vehicule = $this->_vehiculeQuery->findOne($associationData['id_vehicule']);
+            $objConducteur = $this->_conducteurQuery->findOne($associationData['id_conducteur']);
+            $objVehicule = $this->_vehiculeQuery->findOne($associationData['id_vehicule']);
+            var_dump( $objVehicule);
 
             
+
+            $associationObject[] = new Association($associationData['id_association'], $objConducteur, $objVehicule);
             
-            $associationObject[] = new Association ( $associationData['id_association'], $conducteur, $vehicule);
-            var_dump($associationObject);
 
         }
-        
+
         return $associationObject;
 
         
