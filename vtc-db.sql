@@ -30,10 +30,13 @@
 -- SET FOREIGN_KEY_CHECKS=0;
 -- SET FOREIGN_KEY_CHECKS=1;
 
-SELECT * FROM association_vehicule_conducteur;
--- INSERT INTO association_vehicule_conducteur (id_vehicule, id_conducteur) VALUES (2,5);
 
+-- SELECT * FROM association_vehicule_conducteur
+-- LEFT JOIN conducteur
+-- 	ON association_vehicule_conducteur.id_conducteur = conducteur.id_conducteur
+-- LEFT JOIN vehicule
+-- 	ON association_vehicule_conduassociation_vehicule_conducteurcteur.id_vehicule = vehicule.id_vehicule;
 
+-- SELECT * FROM association_vehicule_conducteur;
 
-
- 
+--  alter table association_vehicule_conducteur drop foreign key fk_id_conducteur;

@@ -28,7 +28,7 @@ class Vehicule {
     }
 
     public function getMarque() : string {
-        return $this->_marque;
+        return ucfirst($this->_marque);
     }
 
     public function getModele() : string {

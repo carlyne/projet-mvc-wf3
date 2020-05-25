@@ -23,11 +23,15 @@ class ConducteurController extends AbstractController
         return $conducteurQuery->findOne($id);
     }
 
-    static public function new() : void 
-    {
-        echo self::getTwig()->render('conducteur/new.html');
-    }
+    static public function listAssociation() : void {
+        
+        $conducteurQuery = new ConducteurQuery('conducteur', ['*']);
+        $conducteurs = $conducteurQuery->findAll();
 
+        echo self::getTwig()->render('association/index.html', [
+            'conducteurs' => $conducteurs
+        ]);
+    }
     
     static public function create() : void 
     {   

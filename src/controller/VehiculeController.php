@@ -21,11 +21,6 @@ class VehiculeController extends AbstractController {
         return $vehiculeQuery->findOne($id);
     }
 
-    static public function new() : void 
-    {
-        echo self::getTwig()->render('vehicule/new.html');
-    }
-
     static public function create() : void 
     {
         // futur : gérer ça en array

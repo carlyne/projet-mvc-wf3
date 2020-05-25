@@ -19,7 +19,7 @@
         {% for vehicule in vehicules %}
         <tr>
             <td>{{ vehicule.id }}</td>
-            <td>{{ vehicule.maque }}</td>
+            <td>{{ vehicule.marque }}</td>
             <td>{{ vehicule.modele }}</td>
             <td>{{ vehicule.couleur }}</td>
             <td>{{ vehicule.immatriculation }}</td>
@@ -29,6 +29,36 @@
 
     </tbody>
 </table>
+
+<hr style="margin: 50px 0">
+
+<h1>Ajouter un véhicule</h1>
+
+<form action="{{ base_path ~ '/vehicule/create' }}" method="POST">
+    <div>
+        <label for="marque">Marque :</label>
+        <input type="text" name="marque" id="marque">
+    </div>
+    
+    <div>
+        <label for="modele"> Modele :</label>
+        <input type="text" name="modele" id="modele">
+    </div>
+
+    <div>
+        <label for="couleur"> Couleur :</label>
+        <input type="text" name="couleur" id="couleur">
+    </div>
+
+    <div>
+        <label for="immatriculation"> Immatriculation :</label>
+    <input type="text" name="immatriculation" id="immatriculation">
+    </div>
+    
+
+    <button type="submit">Ajouter</button>
+</form>
+
 
 <a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
 

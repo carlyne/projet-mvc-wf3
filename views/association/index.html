@@ -2,6 +2,53 @@
 
 {% block content %}
 
-<h1>Bienvenue sur la liste des conducteurs et des véhicules</h1>
+
+<h1>Bienvenue sur la page des associations</h1>
+<p>Découvrez quel conducteur possède quel véhicule :</p>
+
+<form action="{{ base_path ~ '/association/create' }}" method="POST">
+    <div>
+        <label for="conducteur">Conducteur :</label>
+        <select name="conducteur" id="conducteur">
+            <option>Choisir un conducteur</option>
+            {% for conducteur in conducteurs %}
+            <option value="{{ conducteur.id }}"> {{ conducteur.prenom }}  {{ conducteur.nom }} </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label for="vehicule">Véhicule :</label>
+        <select name="vehicule" id="vehicule">
+            <option>Choisir un véhicule</option>
+            {% for vehicule in vehicules %}
+            <option value="{{ vehicule.id }}"> {{ vehicule.marque }}  {{ vehicule.modele }} </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button type="submit">Ajouter</button>
+</form>
+
+
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Conducteur</th>
+            <th>Véhicule</th>
+        </tr>
+
+        {% for association in associations %}
+        <tr>
+            <td>{{ association.id }}</td>
+            <td>{{ association.conducteur.prenom }}</td>
+            <td>{{ conducteur.vehicule.marque }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table> 
+
 
 {% endblock %}

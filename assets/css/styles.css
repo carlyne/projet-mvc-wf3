@@ -199,3 +199,25 @@ tr {
 td, th {
     padding: 10px;
 }
+
+a {
+    display: inline-block;
+    margin: 10px;
+    color: midnightblue;
+}
+
+a:hover {
+    color: rgb(96, 96, 156);
+}
+
+form {
+    margin: 20px 0;
+}
+
+form div {
+    margin-bottom: 20px;
+}
+
+form input {
+    padding: 5px;
+}
