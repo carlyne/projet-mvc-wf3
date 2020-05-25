@@ -33,6 +33,7 @@ class VehiculeQuery extends AbstractModel
         return $vehiculeObject;
     }
 
+    // futur : déplacer toutes les requêtes findOne, findAll, etc.. dans une logique à part qui gèrerait les requêtes pour toutes les classes
     public function findOne(int $id) : ?Vehicule
     {
         $bdd = $this->getPdo();

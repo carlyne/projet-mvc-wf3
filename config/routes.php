@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\ConducteurController;
 use App\Controller\VehiculeController;
 use Bramus\Router\Router;
 
@@ -18,7 +19,11 @@ $router->get('/conducteur/new', 'ConducteurController@new');
 $router->get('/vehicule/new', 'VehiculeController@new');
 
 $router->get('/vehicule/edit/(\d+)', function($id) {
-   VehiculeController::edit($id);
+    VehiculeController::edit($id);
+});
+
+$router->get('/conducteur/edit/(\d+)', function($id) {
+    ConducteurController::edit($id);
 });
 
 
@@ -28,6 +33,10 @@ $router->post('vehicule/create', 'VehiculeController@create');
 
 $router->post('/vehicule/update/(\d+)', function($id) {
     VehiculeController::update($id);
+});
+
+$router->post('/conducteur/update/(\d+)', function($id) {
+    ConducteurController::update($id);
 });
 
 $router->run();

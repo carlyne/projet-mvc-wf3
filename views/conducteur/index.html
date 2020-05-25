@@ -18,8 +18,8 @@
         {% for conducteur in conducteurs %}
         <tr>
             <td>{{ conducteur.id }}</td>
-            <td>{{ conducteur.nom }}</td>
             <td>{{ conducteur.prenom }}</td>
+            <td>{{ conducteur.nom }}</td>
             <td><a href="{{ base_path ~ 'conducteur/edit/' ~ conducteur.id }}">E</a></td>
         </tr>
         {% endfor %}
