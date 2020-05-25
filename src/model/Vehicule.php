@@ -3,20 +3,20 @@
 namespace App\Model;
 
 class Vehicule {
-    /** var int */
-    private $_idVehicule;
-    /** var string */
+    /** @var int */
+    private $_id;
+    /** @var string */
     private $_marque;
-    /** var string */
+    /** @var string */
     private $_modele;
-    /** var string */
+    /** @var string */
     private $_couleur;
-    /** var string */
+    /** @var string */
     private $_immatriculation;
 
     public function __construct(int $id, string $marque, string $modele, string $couleur, string $immatriculation) 
     {
-        $this->_idVehicule = $id;
+        $this->_id = $id;
         $this->_marque = $marque;
         $this->_modele = $modele;
         $this->_couleur = $couleur;
@@ -24,7 +24,7 @@ class Vehicule {
     }
 
     public function getId() : int {
-        return $this->_idVehicule;
+        return $this->_id;
     }
 
     public function getMarque() : string {
@@ -45,7 +45,7 @@ class Vehicule {
 
     
     public function setId(int $id) : self {
-        $this->_idVehicule = $id;
+        $this->_id = $id;
         return $this;
     }
 

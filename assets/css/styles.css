@@ -185,3 +185,17 @@ header#navigation li a {
     background-color: midnightblue;
     color: #efefef;
 }
+
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+    border: 1px solid #222;
+}
+
+tr {
+    border: 1px solid #222;
+}
+
+td, th {
+    padding: 10px;
+}

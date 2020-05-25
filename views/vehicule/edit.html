@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Mettre à jour un vehicule</h1>
+
+<form action="{{ base_path ~ 'vehicule/update/' ~ vehicule.id }}" method="POST">
+    <label for="marque">Marque :</label>
+    <input type="text" name="marque" id="marque" value="{{ vehicule.marque }}">
+
+    <label for="modele"> Modele :</label>
+    <input type="text" name="modele" id="modele" value="{{ vehicule.modele }}">
+
+    <label for="couleur"> Couleur :</label>
+    <input type="text" name="couleur" id="couleur" value="{{ vehicule.couleur }}">
+
+    <label for="immatriculation"> Immatriculation :</label>
+    <input type="text" name="immatriculation" id="immatriculation" value="{{ vehicule.immatriculation }}">
+
+    <button type="submit">Editer</button>
+</form>
+
+<a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
+
+{% endblock %}

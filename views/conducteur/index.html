@@ -5,12 +5,28 @@
 <h1>Bienvenue sur la page des conducteurs</h1>
 <p>voici tous les conducteurs existants :</p>
 
-{% for conducteur in conducteurs %}
-<ul sytle="margin-bottom: 20px">
-    <li><h3>{{ conducteur.nom }}</h3></li>
-    <li>{{ conducteur.prenom }}</li>
-</ul>
-{% endfor %}
+
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Editer</th>
+        </tr>
+
+        {% for conducteur in conducteurs %}
+        <tr>
+            <td>{{ conducteur.id }}</td>
+            <td>{{ conducteur.nom }}</td>
+            <td>{{ conducteur.prenom }}</td>
+            <td><a href="{{ base_path ~ 'conducteur/edit/' ~ conducteur.id }}">E</a></td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
 
 <a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
 {% endblock %}

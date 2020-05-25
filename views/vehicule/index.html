@@ -5,13 +5,30 @@
 <h1>Bienvenue sur la page des véhicules</h1>
 <p>voici tous les véhicules existants :</p>
 
-{% for vehicule in vehicules %}
-<ul sytle="margin-bottom: 20px">
-    <li><h3>{{ vehicule.marque }}  {{ vehicule.modele }}</h3></li>
-    <li>{{ vehicule.couleur }}</li>
-    <li>{{ vehicule.immatriculation }}</li>
-</ul>
-{% endfor %}
+<table>
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <th>marque</th>
+            <th>modele</th>
+            <th>couleur</th>
+            <th>immatriculation</th>
+            <th>Editer</th>
+        </tr>
+
+        {% for vehicule in vehicules %}
+        <tr>
+            <td>{{ vehicule.id }}</td>
+            <td>{{ vehicule.maque }}</td>
+            <td>{{ vehicule.modele }}</td>
+            <td>{{ vehicule.couleur }}</td>
+            <td>{{ vehicule.immatriculation }}</td>
+            <td><a href="{{ base_path ~ 'vehicule/edit/' ~ vehicule.id }}">E</a></td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
 
 <a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
 

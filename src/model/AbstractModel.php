@@ -6,15 +6,14 @@ use PDO;
 
 abstract class AbstractModel {
 
-    /** var string */
+    /** @var string */
     protected $_tableName;
-    /** var array */
+    /** @var array */
     protected $_tableFields = ['*'];
-    /** var array */
+    /** @var array */
     protected $_condition = [];
-    /** var array */
+    /** @var array */
     protected $_inserts = [];
-    /** var PDO */
 
     public function __construct(string $tableName, array $tableFields = ['*'])
     {

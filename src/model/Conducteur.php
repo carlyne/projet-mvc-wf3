@@ -3,22 +3,22 @@
 namespace App\Model;
 
 class Conducteur {
-    /** var int */
-    private $_idConducteur;
-    /** var string */
+    /** @var int */
+    private $_id;
+    /** @var string */
     private $_prenom;
-    /** var string */
+    /** @var string */
     private $_nom;
 
     public function __construct(int $id, string $prenom, string $nom) 
     {
-        $this->_idConducteur = $id;
+        $this->_id = $id;
         $this->_prenom = $prenom;
         $this->_nom = $nom;
     }
 
     public function getId() : int {
-        return $this->_idConducteur;
+        return $this->_id;
     }
 
     public function getPrenom() : string {
@@ -30,7 +30,7 @@ class Conducteur {
     }
     
     public function setId(int $id) : self {
-        $this->_idConducteur = $id;
+        $this->_id = $id;
         return $this;
     }
 
