@@ -8,7 +8,12 @@ use App\Model\ConducteurQuery;
 class ConducteurController extends AbstractController 
 {
     static public function listAll() : void {
-        echo self::getTwig()->render('conducteur/index.html');
+        $conducteurQuery = new ConducteurQuery('conducteur', ['*']);
+        $conducteurs = $conducteurQuery->findAll();
+
+        echo self::getTwig()->render('conducteur/index.html', [
+            'conducteurs' => $conducteurs
+        ]);
     }
 
     static public function new() : void 

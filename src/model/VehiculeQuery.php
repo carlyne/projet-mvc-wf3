@@ -10,7 +10,7 @@ class VehiculeQuery extends AbstractModel
         parent::__construct($tableName, $tableFields);
     }
 
-    public function findAll() /*: ?array */
+    public function findAll() : ?array 
     {
         $bdd = $this->getPdo();
         $query = $this->createGetQuery();
@@ -31,7 +31,6 @@ class VehiculeQuery extends AbstractModel
         }
 
         return $vehiculeObject;
-        
     }
 
     // futur : un array en parameters plutot que des string

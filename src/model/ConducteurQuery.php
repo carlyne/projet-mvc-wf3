@@ -10,6 +10,30 @@ class ConducteurQuery extends AbstractModel
         parent::__construct($tableName, $tableFields);
     }
 
+    public function findAll() : ?array 
+    {
+        $bdd = $this->getPdo();
+        $query = $this->createGetQuery();
+        $statement = $bdd->prepare($query);
+        $statement->execute();
+
+        $data = $statement->fetchAll();
+
+        if(!$data) {
+            return [];
+        };
+
+        $conducteurObject = [];
+        foreach($data as $conducteurData) {
+            $conducteurObject[] = new Conducteur ( 
+                $conducteurData['id_conducteur'], $conducteurData['prenom'], $conducteurData['nom']
+            );
+        }
+
+        return  $conducteurObject;
+    }
+
+
     // futur : un array en parameters plutot que des string
     public function createOne(string $prenom, string $nom) : bool
     {

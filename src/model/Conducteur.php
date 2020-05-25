@@ -10,6 +10,13 @@ class Conducteur {
     /** var string */
     private $_nom;
 
+    public function __construct(int $id, string $prenom, string $nom) 
+    {
+        $this->_idConducteur = $id;
+        $this->_prenom = $prenom;
+        $this->_nom = $nom;
+    }
+
     public function getId() : int {
         return $this->_idConducteur;
     }

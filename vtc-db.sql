@@ -28,7 +28,12 @@
 -- );
 
 -- SET FOREIGN_KEY_CHECKS=0;
+-- SET FOREIGN_KEY_CHECKS=1;
 
-SELECT * from association_vehicule_conducteur;
+SELECT * FROM association_vehicule_conducteur;
+-- INSERT INTO association_vehicule_conducteur (id_vehicule, id_conducteur) VALUES (2,5);
+
+
+
 
  

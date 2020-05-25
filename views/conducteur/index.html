@@ -3,6 +3,14 @@
 {% block content %}
 
 <h1>Bienvenue sur la page des conducteurs</h1>
+<p>voici tous les conducteurs existants :</p>
+
+{% for conducteur in conducteurs %}
+<ul sytle="margin-bottom: 20px">
+    <li><h3>{{ conducteur.nom }}</h3></li>
+    <li>{{ conducteur.prenom }}</li>
+</ul>
+{% endfor %}
 
 <a href="{{ base_path ~ '/' }}">Retour à l'accueil</a>
 {% endblock %}
